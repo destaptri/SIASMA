@@ -1,0 +1,8 @@
+.element {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.element {
+    display: block;
+}
