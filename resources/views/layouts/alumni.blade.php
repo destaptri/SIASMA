@@ -45,11 +45,32 @@
                         @endguest
 
                         @auth
-                        <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
-                        <a href="{{ route('biodata') }}" class="nav-item nav-link">Biodata</a>
-                        <a href="service.html" class="nav-item nav-link">Berita</a>
-                        <a href="{{ route('login') }}" class="nav-item nav-link">Profil</a>
-                        @endauth
+                    <li class="nav-item">
+                        <a href="{{ route('beranda') }}" class="nav-link active">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('biodata') }}" class="nav-link">Biodata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="service.html" class="nav-link">Berita</a>
+                    </li>
+
+                    <!-- Dropdown Profil -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profil
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profil</a></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
                 </div>
             </nav>
 </div>

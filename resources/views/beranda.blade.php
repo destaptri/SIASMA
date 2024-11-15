@@ -53,22 +53,42 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                        @guest
+                @guest
                         <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
                         <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
                         @endguest
 
                         @auth
-                        <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
-                        <a href="{{ route('biodata') }}" class="nav-item nav-link">Biodata</a>
-                        <a href="service.html" class="nav-item nav-link">Berita</a>
-                        <a href="{{ route('login') }}" class="nav-item nav-link">Profil</a>
-                        @endauth
+                    <li class="nav-item">
+                        <a href="{{ route('beranda') }}" class="nav-link active">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('biodata') }}" class="nav-link">Biodata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="service.html" class="nav-link">Berita</a>
+                    </li>
+
+                    <!-- Dropdown Profil -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profil
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profil</a></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
                 </div>
+
             </nav>
 </div>
-
-
 
 
     <section class="hero-section">
@@ -91,5 +111,11 @@
 
 <!-- Include Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS (Optional) -->
+<script src="js/scripts.js"></script>
+@vite([
+        'resources/js/app.js',
+        'resources/js/script.js'
+])
 </body>
 </html>

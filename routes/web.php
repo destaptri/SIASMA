@@ -12,9 +12,24 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profil', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/biodata', function () {
+        return view('biodata.biodata');
+    })->name('biodata');
 });
+
+Route::get('/beranda', function () {
+    return view('beranda');
+})->name('beranda');
+
+
+
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
 require __DIR__.'/auth.php';
