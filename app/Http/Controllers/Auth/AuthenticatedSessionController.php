@@ -31,6 +31,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         // Ambil user yang sedang login
+        /** @var \App\Models\User */
         $user = Auth::user();
 
         // Cek role dan arahkan ke halaman yang sesuai

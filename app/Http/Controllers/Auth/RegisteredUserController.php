@@ -32,6 +32,8 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'nip' => ['required', 'string', 'max:18', 'unique:'.User::class],
+            'nisn' => ['required', 'string', 'max:10', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -39,6 +41,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'nisn'=>$request->nisn,
         ]);
 
         event(new Registered($user));

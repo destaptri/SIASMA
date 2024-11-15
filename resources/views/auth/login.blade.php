@@ -48,15 +48,14 @@
                 @csrf
 
                 <!-- NISN/NIP Input -->
-                <label for="email">{{ __('NISN/NIP') }}</label>
+                <label for="input_type">{{ __('NISN/NIP/Email') }}</label>
                 <div class="email-container">
-                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="username" autofocus>
+                    <input id="input_type" type="text" class="form-control" name="input_type" value="{{ old('input_type') }}" autocomplete="username" autofocus>
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-error :messages="$errors->get('nisn')" class="mt-2" />
+                <x-input-error :messages="$errors->get('nip')" class="mt-2" />
                 </div>
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                
 
                 <div class="links d-flex flex-row-reverse">
                     <a href="#">Lupa NISN/NIP?</a> 
@@ -65,14 +64,11 @@
                 <!-- Password Input -->
                 <label for="password">{{ __('Password') }}</label>
                 <div class="password-container">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
                     <i class="fas fa-eye" id="togglePassword"></i>
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
                 </div>
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
 
                 @if (Route::has('password.request'))
                     <div class="links d-flex flex-row-reverse">

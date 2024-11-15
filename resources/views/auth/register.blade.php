@@ -15,6 +15,12 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        <!-- NISN -->
+        <div class="mt-4">
+            <x-input-label for="nisn" :value="__('NISN')" />
+            <x-text-input id="nisn" class="block mt-1 w-full" type="text" name="nisn" :value="old('nisn')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('nisn')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">
