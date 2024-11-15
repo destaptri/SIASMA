@@ -1,26 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/beranda', function () {
-    return view('index');
-})->name('beranda');
-Route::get('/login-alumni', function () {
-    return view('auth.login-alumni');
-})->name('login-alumni');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/login-admin', function () {
-    return view('auth.login-admin');
-})->name('login-admin');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/hasil-pencarian', function () {
-    return view('guest.hasil-pencarian');
-})->name('hasil-pencarian');
-
-Route::get('/data-alumni', function () {
-    return view('alumni.biodata');
-})->name('biodata');
+require __DIR__.'/auth.php';

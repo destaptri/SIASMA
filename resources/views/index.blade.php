@@ -52,12 +52,18 @@
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                    <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
+                <div class="navbar-nav ms-auto py-0">
+                        @guest
+                        <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
+                        <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
+                        @endguest
+
+                        @auth
+                        <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
                         <a href="{{ route('biodata') }}" class="nav-item nav-link">Biodata</a>
                         <a href="service.html" class="nav-item nav-link">Berita</a>
-                        <a href="{{ route('login-admin') }}" class="nav-item nav-link">Login</a>
-                        
+                        <a href="{{ route('login') }}" class="nav-item nav-link">Profil</a>
+                        @endauth
                 </div>
             </nav>
 </div>
