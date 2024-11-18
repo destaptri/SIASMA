@@ -1,15 +1,14 @@
-@extends('layouts.alumni')
+@extends('layouts.sidebar')
 @section('content')
-<div class="biodata">
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb pt-0">
             <li class="breadcrumb-item"><a href="{{ route('beranda') }}">Hasil Pencarian</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data Alumni</li>
         </ol>
     </nav>
-
-
-    <div class="container-biodata col-lg-12">
+    
+    <div class="container-biodata col-lg-12 pt-0">
+        
         <div class="row justify-content-center col-lg-12">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <!-- Heading -->

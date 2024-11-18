@@ -55,27 +55,27 @@ document.getElementById('currentPage').addEventListener('change', function () {
     }
 });
 
-// Function to load data for the current page (for demo purposes)
-function loadTableData(page) {
-  const tbody = document.getElementById('resultBody');
-  tbody.innerHTML = ''; // Clear the table body
-  // For demo purposes, we're just adding placeholder rows
-  for (let i = 0; i < 5; i++) {
-      const row = `
-          <tr>
-              <td>${page}123456${i}</td>
-              <td>Nama ${i}</td>
-              <td>202${i}</td>
-              <td>Universitas ${i}</td>
-              <td>Program ${i}</td>
-          </tr>
-      `;
-      tbody.insertAdjacentHTML('beforeend', row);
-  }
-}
+// // Function to load data for the current page (for demo purposes)
+// function loadTableData(page) {
+//   const tbody = document.getElementById('resultBody');
+//   tbody.innerHTML = ''; // Clear the table body
+//   // For demo purposes, we're just adding placeholder rows
+//   for (let i = 0; i < 5; i++) {
+//       const row = `
+//           <tr>
+//               <td>${page}123456${i}</td>
+//               <td>Nama ${i}</td>
+//               <td>202${i}</td>
+//               <td>Universitas ${i}</td>
+//               <td>Program ${i}</td>
+//           </tr>
+//       `;
+//       tbody.insertAdjacentHTML('beforeend', row);
+//   }
+// }
 
 
-// Load the first page by default
-loadTableData(1);
+// // Load the first page by default
+// loadTableData(1);
 
     

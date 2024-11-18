@@ -470,6 +470,12 @@ input[type="search"] {
 
 /*start page biodata*/
 
+.breadcrumb {
+    padding-left: 90px;
+    padding-top: 30px;
+    position: sticky;
+}
+
 .container-biodata {
     display: flex;
     justify-content: center;
@@ -483,8 +489,9 @@ input[type="search"] {
 }
 /* Profile image styling */
 #profile-image {
-    width: 300px;
-    height: 400px;
+    width: 100%; /* Mengisi lebar kontainer */
+  height: auto; /* Menyesuaikan tinggi agar proporsional */
+  aspect-ratio: 3 / 4; /* Rasio 3:4 */
     margin-top: 20px;
     object-fit: cover;
 }
@@ -499,7 +506,7 @@ input[type="search"] {
 
 }
 .container-biodata .table td {
-    background-color: #FFFFFF;
+    background-color: #E9ECEF;
 }
 /* Set a wider width for desktop */
 @media (min-width: 992px) {
@@ -524,6 +531,10 @@ input[type="search"] {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .breadcrumb {
+        padding-left: 15px;
+        padding-top: 10px;
+    }
     .container-biodata .row {
         width: 350px;
     }
@@ -589,3 +600,15 @@ input[type="search"] {
 }
 
 /*end page biodata */
+
+.btn {
+    visibility: visible !important;
+}
+
+/* Table Row Styling */
+.pencarian .table td {
+    border: 1px solid #062A61; /* Cell border color */
+    padding: 12px 15px;
+    text-align: center; 
+    vertical-align: middle;
+}

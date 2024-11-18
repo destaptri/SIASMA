@@ -25,7 +25,21 @@ Route::get('/beranda', function () {
     return view('beranda');
 })->name('beranda');
 
+Route::get('/data-alumni', function () {
+    return view('admin.data-alumni');
+})->name('data-alumni');
 
+Route::get('/hasil-pencarian', function () {
+    return view('guest.hasil-pencarian');
+})->name('hasil-pencarian');
+
+Route::get('/pencarian-data', function () {
+    return view('admin.pencarian-data');
+})->name('pencarian-data');
+
+Route::get('/validasi', function () {
+    return view('admin.validasi');
+})->name('antrian-validasi');
 
 
 Route::get('/login', function () {

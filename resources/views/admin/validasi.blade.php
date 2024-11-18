@@ -1,19 +1,12 @@
-@extends('layouts.alumni')
-
+@extends('layouts.sidebar')
 @section('content')
 <div class="search-content">
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('beranda') }}">Beranda</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Hasil Pencarian</li>
-        </ol>
-    </nav>
-    <h4>Hasil Pencarian</h4>
+    <h4>Validasi Data Alumni</h4>
 
     <div class="container-search">
         <form class="search-box d-flex w-100">
             <div class="input-group flex-grow-1">
-                <input class="form-control" type="search" placeholder="Hasil Pencarian" aria-label="Search">
+                <input class="form-control" type="search" placeholder="Cari Data Alumni..." aria-label="Search">
                 <button class="btn btn-outline-secondary" type="submit">
                     <i class="bi bi-search"></i>
                 </button>
@@ -27,27 +20,23 @@
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>NISN</th>
                             <th>Nama Lengkap</th>
                             <th>Tahun Lulus</th>
                             <th>Universitas</th>
-                            <th>Program Studi</th>
+                            <th>Jurusan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody id="resultBody">
                         <tr>
-                            <td data-label="NISN">12345678</td>
                             <td data-label="Nama Lengkap">John Doe</td>
                             <td data-label="Tahun Lulus">2020</td>
                             <td data-label="Universitas">Universitas Indonesia</td>
-                            <td data-label="Program Studi">Teknik Informatika</td>
-                        </tr>
-                        <tr>
-                            <td data-label="NISN">87654321</td>
-                            <td data-label="Nama Lengkap">John Smith</td>
-                            <td data-label="Tahun Lulus">2019</td>
-                            <td data-label="Universitas">Institut Teknologi Bandung</td>
-                            <td data-label="Program Studi">Desain Produk</td>
+                            <td data-label="Jurusan">Sistem Informasi</td>
+                            <td style="text-align: center; vertical-align: middle;">
+                            <button class="btn btn-primary">Lihat</button>
+                            <button class="btn btn-danger">Hapus</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
