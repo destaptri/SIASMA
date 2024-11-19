@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
 let currentPage = 1;
 const totalPages = 10; // You can dynamically set this based on data
 
-document.getElementById('totalPages').textContent = totalPages;
+// document.getElementById('totalPages').textContent = totalPages;
 
-// Event listeners for pagination buttons
-document.getElementById('prevPage').addEventListener('click', function () {
-    if (currentPage > 1) {
-        currentPage--;
-        document.getElementById('currentPage').value = currentPage;
-        loadTableData(currentPage);
-    }
-});
+// // Event listeners for pagination buttons
+// document.getElementById('prevPage').addEventListener('click', function () {
+//     if (currentPage > 1) {
+//         currentPage--;
+//         document.getElementById('currentPage').value = currentPage;
+//         loadTableData(currentPage);
+//     }
+// });
 
 document.getElementById('nextPage').addEventListener('click', function () {
     if (currentPage < totalPages) {
@@ -55,27 +55,59 @@ document.getElementById('currentPage').addEventListener('change', function () {
     }
 });
 
-// // Function to load data for the current page (for demo purposes)
-// function loadTableData(page) {
-//   const tbody = document.getElementById('resultBody');
-//   tbody.innerHTML = ''; // Clear the table body
-//   // For demo purposes, we're just adding placeholder rows
-//   for (let i = 0; i < 5; i++) {
-//       const row = `
-//           <tr>
-//               <td>${page}123456${i}</td>
-//               <td>Nama ${i}</td>
-//               <td>202${i}</td>
-//               <td>Universitas ${i}</td>
-//               <td>Program ${i}</td>
-//           </tr>
-//       `;
-//       tbody.insertAdjacentHTML('beforeend', row);
-//   }
-// }
+document.addEventListener("DOMContentLoaded", function () {
+    const btnEdit = document.getElementById("btn-edit");
+    const btnSave = document.getElementById("btn-save");
+    const btnCancel = document.getElementById("btn-cancel");
+    const btnChangePhoto = document.getElementById("btn-change-photo");
+    const biodataTableCells = document.querySelectorAll("#biodata-table td[data-key]");
+
+    btnEdit.addEventListener("click", () => {
+        // Aktifkan mode edit
+        biodataTableCells.forEach(cell => {
+            cell.setAttribute("contenteditable", "true");
+            cell.classList.add("editable-cell"); // Tambahkan styling untuk sel editable (opsional)
+        });
+        btnEdit.classList.add("d-none");
+        btnSave.classList.remove("d-none");
+        btnCancel.classList.remove("d-none");
+        btnChangePhoto.classList.remove("d-none");
+    });
+
+    btnCancel.addEventListener("click", () => {
+        // Batalkan mode edit
+        biodataTableCells.forEach(cell => {
+            cell.setAttribute("contenteditable", "false");
+            cell.classList.remove("editable-cell");
+        });
+        btnEdit.classList.remove("d-none");
+        btnSave.classList.add("d-none");
+        btnCancel.classList.add("d-none");
+        btnChangePhoto.classList.add("d-none");
+    });
+
+    btnSave.addEventListener("click", () => {
+        // Simpan data ke server (placeholder)
+        const biodataData = {};
+        biodataTableCells.forEach(cell => {
+            const key = cell.getAttribute("data-key");
+            const value = cell.textContent.trim();
+            biodataData[key] = value; // Simpan data ke objek
+        });
+
+        console.log("Data yang disimpan:", biodataData);
+
+        // Kembalikan ke mode non-edit
+        btnCancel.click();
+    });
+});
 
 
-// // Load the first page by default
-// loadTableData(1);
+console.log("Button Edit:", btnEdit);
+console.log("Button Save:", btnSave);
+console.log("Button Cancel:", btnCancel);
+console.log("Table Cells:", biodataTableCells);
 
-    
+btnEdit.addEventListener("click", () => {
+    console.log("Edit button clicked!");
+});

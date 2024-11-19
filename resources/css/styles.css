@@ -1,6 +1,7 @@
 
 body {
     font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
+
 }
 
 .navbar {
@@ -292,6 +293,10 @@ input[type="search"] {
 }
 
 /* Custom styles */
+.table-responsive {
+    overflow-x: auto; /* Tambahkan scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling pada mobile */
+}
 .table {
     border-collapse: separate;
     border-spacing: 0; /* Remove gaps between cells */
@@ -316,13 +321,12 @@ input[type="search"] {
 /* Table Row Styling */
 .table td {
     border: 1px solid #FFFFFF; /* Cell border color */
-    height: 45px;
+    padding: 12px 15px;
 }
 
 /* Row Background Color */
 .table tbody tr {
     background-color: #E9ECEF; /* Row background color */
-    height: 45px;
 }
 
 /* Row Hover Effect */
@@ -333,7 +337,7 @@ input[type="search"] {
 /* Optional: Responsive table styling for smaller screens */
 @media (max-width: 768px) {
     .search-content {
-        margin: 20px 50px;
+        margin: 0;
     }
     .breadcrumb {
         font-size: smaller;
@@ -354,32 +358,9 @@ input[type="search"] {
         border-radius: 10px;
         width: 40px;
     }
-    .table thead {
-        display: none;
-        padding-left: 15px;
-        height: fit-content;
-        position: relative;
-        font-size: smaller;
-    }
-    .table, .table tbody, .table tr, .table td {
-        display: block;
-        width: 100%;
-    }
-    
+    .table th,
     .table td {
-        text-align: right;
-        padding-left: 15px;
-        position: relative;
-        font-size: smaller;
-        border: none;
-    }
-    .table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        width: 45%;
-        text-align: left;
-        font-weight: bold;
+        font-size: 14px; /* Ukuran teks lebih kecil untuk layar kecil */
     }
 }
 
@@ -535,10 +516,6 @@ input[type="search"] {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .breadcrumb {
-        padding-left: 15px;
-        padding-top: 10px;
-    }
     .container-biodata .row {
         width: 350px;
     }
@@ -591,10 +568,11 @@ input[type="search"] {
     .container-biodata .table td {
         display: block;
         width: 100%;
-        padding-left: 10px;
+        padding:0 15px;
         text-align: left;
         height:min-content;
         font-size: smaller;
+        background-color: #FFFFFF;
     }
 
     /* Center buttons on mobile */
@@ -604,6 +582,8 @@ input[type="search"] {
 }
 
 /*end page biodata */
+
+
 
 .btn {
     visibility: visible !important;
