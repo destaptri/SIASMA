@@ -25,4 +25,20 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     });
   });
   
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            // Hapus semua class active dari link
+            navLinks.forEach(nav => nav.classList.remove("active"));
+
+            // Tambahkan class active ke link yang diklik
+            this.classList.add("active");
+        });
+    });
+});
+
+  
+  
   

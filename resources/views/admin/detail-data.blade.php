@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 @section('content')
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb pt-0">
+        <ol class="breadcrumb admin pt-0">
             <li class="breadcrumb-item"><a href="{{ route('beranda') }}">Hasil Pencarian</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data Alumni</li>
         </ol>

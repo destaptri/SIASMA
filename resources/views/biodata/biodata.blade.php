@@ -75,8 +75,8 @@
 
                         <!-- Tombol Simpan dan Batal -->
                         <div class="d-flex justify-content-center justify-content-lg-end mt-4">
-                            <button class="btn btn-success me-2">Simpan</button>
-                            <button class="btn btn-secondary">Batal</button>
+                            <button class="btn btn-success me-2">Edit Biodata</button>
+                            
                         </div>
                     </div>
                 </div> <!-- end of row -->

@@ -30,50 +30,51 @@
 <body>
     <div class="wrapper d-flex">
         <!-- Sidebar -->
-        <nav class="sidebar flex-column bg-white position-sticky">
-            <div class="sidebar-header p-3 d-flex align-items-center">
-                <img src="{{ Vite::asset('public/images/logo.png') }}" alt="Logo" class="logo me-3">
-                <div>
-                    <span class="brand-name d-block">SIASMA</span>
-                    <span class="brand-subtitle">SISTEM INFORMASI ALUMNI<br>SMAN 1 PONTIANAK</span>
-                </div>
-            </div>
-            <ul class="nav flex-column">
-            <li class="nav-item">
-                    <a class="nav-link menu" href="#">
-                    <i class="bi bi-grid"></i> MENU
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-people-fill"></i> Data Alumni
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-check2-circle"></i> Validasi Data Alumni
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-newspaper"></i> Berita
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-file-earmark"></i> Laporan
-                    </a>
-                </li>
-                <li class="nav-item">
-                <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                  @csrf
-                    <button type="submit" class="nav-link">
+<nav class="sidebar flex-column bg-white position-sticky">
+    <div class="sidebar-header p-3 d-flex align-items-center">
+        <img src="{{ Vite::asset('public/images/logo.png') }}" alt="Logo" class="logo me-3">
+        <div>
+            <span class="brand-name d-block">SIASMA</span>
+            <span class="brand-subtitle">SISTEM INFORMASI ALUMNI<br>SMAN 1 PONTIANAK</span>
+        </div>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link menu {{ Route::currentRouteName() === 'menu' ? 'active' : '' }}" href="#">
+                <i class="bi bi-grid"></i> MENU
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ Route::currentRouteName() === 'pencarian-data' ? 'active' : '' }}" href="{{ route('pencarian-data') }}">
+                <i class="bi bi-people-fill"></i> Data Alumni
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ Route::currentRouteName() === 'antrian-validasi' ? 'active' : '' }}" href="{{ route('antrian-validasi') }}">
+                <i class="bi bi-check2-circle"></i> Validasi Data Alumni
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ Route::currentRouteName() === '' ? 'active' : '' }}" href="#">
+                <i class="bi bi-newspaper"></i> Berita
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ Route::currentRouteName() === '' ? 'active' : '' }}" href="#">
+                <i class="bi bi-file-earmark"></i> Laporan
+            </a>
+        </li>
+        <li class="nav-item">
+            <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                @csrf
+                <button type="submit" class="nav-link">
                     <i class="bi bi-box-arrow-right"></i> Logout
-                    </button>
-                </form>
-                </li>
-            </ul>
-        </nav>
+                </button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
 
     <div class="container-fluid flex-column ml-1">
     <div class="user-session ms-auto flex-row">

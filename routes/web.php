@@ -25,9 +25,9 @@ Route::get('/beranda', function () {
     return view('beranda');
 })->name('beranda');
 
-Route::get('/data-alumni', function () {
-    return view('admin.data-alumni');
-})->name('data-alumni');
+Route::get('/detail-data-alumni', function () {
+    return view('admin.detail-data');
+})->name('detail-data');
 
 Route::get('/hasil-pencarian', function () {
     return view('guest.hasil-pencarian');

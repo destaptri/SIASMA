@@ -1,7 +1,6 @@
 
 body {
     font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
-
 }
 
 .navbar {
@@ -239,7 +238,12 @@ input[type="password"] {
 /* start page hasil-pencarian*/
 
 .search-content {
-    margin: 42px 80px;
+    justify-content: center;
+    padding:10px 50px;
+}
+
+.search-content .breadcrumb {
+    padding-left: 0;
 }
 .search-content h4 {
     font-size: 32px;
@@ -248,7 +252,7 @@ input[type="password"] {
 
 .search-content h4 {
     color: #062A61;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .search-content .container-search {
@@ -266,7 +270,7 @@ input[type="search"] {
     font-size: 20px;
     font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
     width: 386px;
-    height: 70px;
+    height: 60px;
     padding-right: 40px; /* Make room for the eye icon */
     box-sizing: border-box;
 }
@@ -283,7 +287,7 @@ input[type="search"] {
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     width: 100px;
-    height: 70px;
+    height: 60px;
     box-sizing: border-box;
 }
 
@@ -291,7 +295,7 @@ input[type="search"] {
 .table {
     border-collapse: separate;
     border-spacing: 0; /* Remove gaps between cells */
-    border: 1px solid #062A61; /* Outer border */
+    border: 1px solid #FFFFFF; /* Outer border */
     border-radius: 8px; /* Border radius for the whole table */
     overflow: hidden; /* To ensure the border radius applies properly */
     margin-top: 20px;
@@ -301,24 +305,24 @@ input[type="search"] {
 .table th {
     background-color: #083579; /* Header background color */
     color: white;
-    height: 61px;
+    height: 45px;
     padding-left: 15px;
     text-align: center;
     justify-content: center;
     align-items: center;
     align-content: center;
-    border: none; /* Remove border between header and body */
 }
 
 /* Table Row Styling */
 .table td {
-    border: 1px solid #062A61; /* Cell border color */
-    padding: 12px 15px;
+    border: 1px solid #FFFFFF; /* Cell border color */
+    height: 45px;
 }
 
 /* Row Background Color */
 .table tbody tr {
     background-color: #E9ECEF; /* Row background color */
+    height: 45px;
 }
 
 /* Row Hover Effect */
@@ -471,15 +475,14 @@ input[type="search"] {
 /*start page biodata*/
 
 .breadcrumb {
-    padding-left: 90px;
-    padding-top: 30px;
     position: sticky;
+    padding: 30px 60px 0px 65px;
 }
 
 .container-biodata {
     display: flex;
     justify-content: center;
-    padding:60px 80px;
+    padding:10px 50px;
 }
 
 .container-biodata h3 {
@@ -490,8 +493,8 @@ input[type="search"] {
 /* Profile image styling */
 #profile-image {
     width: 100%; /* Mengisi lebar kontainer */
-  height: auto; /* Menyesuaikan tinggi agar proporsional */
-  aspect-ratio: 3 / 4; /* Rasio 3:4 */
+    height: auto; /* Menyesuaikan tinggi agar proporsional */
+    aspect-ratio: 3/4;
     margin-top: 20px;
     object-fit: cover;
 }
@@ -503,6 +506,7 @@ input[type="search"] {
 
 .container-biodata .table th {
     text-align: left;
+    border: 1px solid #FFFFFF;
 
 }
 .container-biodata .table td {
@@ -603,11 +607,14 @@ input[type="search"] {
 
 .btn {
     visibility: visible !important;
+    padding: 0px 8px;
+    font-size: 12px;
+    height: 26px;
 }
 
 /* Table Row Styling */
 .pencarian .table td {
-    border: 1px solid #062A61; /* Cell border color */
+    border: 1px solid #FFFFFF; /* Cell border color */
     padding: 12px 15px;
     text-align: center; 
     vertical-align: middle;
