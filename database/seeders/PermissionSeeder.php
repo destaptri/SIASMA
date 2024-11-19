@@ -14,12 +14,15 @@ class PermissionSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
+        'show-role',
         'create-role',
         'edit-role',
         'delete-role',
+        'show-user',
         'create-user',
         'edit-user',
         'delete-user',
+        'show-biodata',
         'create-biodata',
         'edit-biodata',
         'delete-biodata',

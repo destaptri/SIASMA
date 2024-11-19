@@ -19,17 +19,21 @@ class RoleSeeder extends Seeder
         $alumni = Role::create(['name' => 'Alumni']);
 
         $admin->givePermissionTo([
+            'show-biodata',
             'create-biodata',
             'edit-biodata',
             'delete-biodata',
             'validate-biodata',
-            'show-laporan'
+            'show-laporan',
+            'edit-profile'
         ]);
 
         $kepalasekolah->givePermissionTo([
-            'show-laporan'
+            'show-laporan',
+            'edit-profile'
         ]);
         $alumni->givePermissionTo([
+            'show-biodata',
             'create-biodata',
             'edit-biodata',
             'delete-biodata',
