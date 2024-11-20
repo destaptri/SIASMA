@@ -16,15 +16,15 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Foreign key ke tabel users
             $table->string('nisn', 20)->unique();
             $table->string('nama_lengkap');
-            $table->string('kelas', 10);
-            $table->year('tahun_lulus');
+            $table->string('kelas', 10)->nullable();
+            $table->year('tahun_lulus')->nullable();
             $table->string('universitas')->nullable();
             $table->string('fakultas')->nullable();
             $table->string('jurusan')->nullable();
             $table->string('jalur_penerimaan')->nullable();
             $table->year('tahun_diterima')->nullable();
             $table->string('foto_pribadi')->nullable();
-            $table->enum('status_validasi', ['ya', 'tidak'])->nullable();
+            $table->enum('status_validasi', ['ya', 'tidak'])->default('tidak');
             $table->timestamp('tanggal_pengajuan');
             $table->timestamps();
         });
