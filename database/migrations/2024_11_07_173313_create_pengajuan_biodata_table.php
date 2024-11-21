@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('jurusan')->nullable();
             $table->string('jalur_penerimaan')->nullable();
             $table->year('tahun_diterima')->nullable();
+            $table->string('status_bekerja')->nullable();
             $table->string('foto_pribadi')->nullable();
             $table->enum('status_validasi', ['ya', 'tidak'])->default('tidak');
-            $table->timestamp('tanggal_pengajuan');
             $table->timestamps();
         });
     }

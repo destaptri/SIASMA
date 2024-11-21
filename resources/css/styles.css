@@ -488,10 +488,16 @@ input[type="search"] {
 .container-biodata .table th {
     text-align: left;
     border: 1px solid #FFFFFF;
+    vertical-align: middle;
+    width: 30%;
 
 }
 .container-biodata .table td {
     background-color: #E9ECEF;
+    vertical-align: middle;
+    width: 70%;
+    height: 30px;
+    padding: 10px;
 }
 /* Set a wider width for desktop */
 @media (min-width: 992px) {
@@ -502,16 +508,6 @@ input[type="search"] {
     .col-lg-2 {
         width: 33.33%; /* Adjust width of the image area */
     }
-}
-
-.container-biodata .table th {
-    vertical-align: middle;
-    width: 30%;
-} 
-
-.container-biodata .table td {
-    vertical-align: middle;
-    width: 70%;
 }
 
 /* Media Queries */
@@ -580,6 +576,16 @@ input[type="search"] {
         justify-content: center;
     }
 }
+
+/* Menyesuaikan tinggi input untuk tabel */
+.form-control {
+    border: none !important;
+    background:none;
+    height: auto !important;
+    padding: 0; /* Padding yang lebih kecil */
+    font-size: 14px; /* Ukuran font lebih kecil */
+}
+
 
 /*end page biodata */
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BiodataController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,9 +22,8 @@ Route::middleware(['auth'])->group(function () {
 // Middleware untuk role alumni
 Route::middleware(['auth', 'role:Alumni'])->group(function () {
     // Biodata - hanya dapat diakses oleh role alumni
-    Route::get('/biodata', function () {
-        return view('biodata.biodata');
-    })->name('biodata');
+    Route::get('/biodata', [BiodataController::class, 'show'])->name('alumni.biodata');
+    Route::post('/biodata', [BiodataController::class, 'update'])->name('alumni.biodata.update');
 });
 
 // Middleware untuk role admin

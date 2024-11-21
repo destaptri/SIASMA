@@ -63,7 +63,7 @@
                         <a href="{{ route('beranda') }}" class="nav-link active">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('biodata') }}" class="nav-link">Biodata</a>
+                        <a href="{{ route('alumni.biodata') }}" class="nav-link">Biodata</a>
                     </li>
                     <li class="nav-item">
                         <a href="service.html" class="nav-link">Berita</a>

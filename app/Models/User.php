@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use app\Models\Biodata;
 
 class User extends Authenticatable
 {
@@ -44,4 +45,15 @@ protected $casts = [
     'email_verified_at' => 'datetime',
     'password' => 'hashed',
     ];
+
+// app/Models/User.php
+public function biodata()
+{
+    return $this->hasOne(Biodata::class);
+}
+
+public function pengajuanBiodata()
+{
+    return $this->hasMany(PengajuanBiodata::class);
+}
 }
